@@ -2,8 +2,16 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+	<PackageId>CourseworkLibrary</PackageId>
+	<Version>1.0.6</Version>
+	<Authors>Sloyka-dev</Authors>
+	<Company>SloykaCoursework</Company>
+	<PackageDescription>This is a library for my coursework application.</PackageDescription>
+	<RepositoryUrl>
+		https://github.com/https://github.com/SloykaCoursework/CourseWorkLibraryNuGet.git/CourseWorkLibrary</RepositoryUrl>
+	<Title>Coursework Library</Title>
+	<GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+	<PackAsTool>False</PackAsTool>
   </PropertyGroup>
 
 </Project>

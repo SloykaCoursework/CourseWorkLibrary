@@ -2,10 +2,10 @@
 
 public enum CommandCode : byte
 {
-    ReadUser,
-    ReadAllUsers,
-    AddUser,
-    EditUser,
-    DeleteUser,
-    SendMessage
+    CreateData = 1,
+    FindArithmeticMeanValues,
+    CountAllGroups,
+    ChangeCourseToAll,
+    FindOldestStudent,
+    FindYoungerInstructor
 }

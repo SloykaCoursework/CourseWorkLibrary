@@ -19,7 +19,7 @@ public static class CommandHelper
 
         if (requestArray[3] != Const.STX && requestArray[4 + dataLength] != Const.ETX)
         {
-            Console.WriteLine("Wrong message");
+            //Console.WriteLine("Wrong message");
             return false;
         }
 
@@ -36,23 +36,23 @@ public static class CommandHelper
 
         var dataBytes = dataList.ToArray();
 
-        Console.WriteLine($"> C: {commandCode}");
-        Console.WriteLine($"> L: {lengthBase}");
-        Console.WriteLine($"> len: {dataLength}");
+        //Console.WriteLine($"> C: {commandCode}");
+        //Console.WriteLine($"> L: {lengthBase}");
+        //Console.WriteLine($"> len: {dataLength}");
         var base64Json = Encoding.ASCII.GetString(dataBytes);
-        Console.WriteLine($"> BASE64: {base64Json}");
+        //Console.WriteLine($"> BASE64: {base64Json}");
         var jsonBytes = Convert.FromBase64String(base64Json);
 
         var data = JsonSerializer.Deserialize<Dictionary<string, object?>>(jsonBytes);
 
-        Console.WriteLine($"> RAW: [{ToReadableByteArray(requestArray)}]");
+        //Console.WriteLine($"> RAW: [{ToReadableByteArray(requestArray)}]");
 
         command = new Command()
         {
             Code = (byte)commandCode,
             Arguments = data ?? new Dictionary<string, object?>()
         };
-        Console.WriteLine($"> JSON: {JsonSerializer.Serialize(command)}");
+        //Console.WriteLine($"> JSON: {JsonSerializer.Serialize(command)}");
         return true;
     }
 
@@ -69,16 +69,16 @@ public static class CommandHelper
 
         var base64Json = Convert.ToBase64String(jsonBytes);
         var base64Bytes = Encoding.ASCII.GetBytes(base64Json);
-        Console.WriteLine($"< JSON: {JsonSerializer.Serialize(command)}");
-        Console.WriteLine($"< BASE64: {base64Json}");
+        //Console.WriteLine($"< JSON: {JsonSerializer.Serialize(command)}");
+        //Console.WriteLine($"< BASE64: {base64Json}");
 
         var base2Length = EncodeHelper.EncodeLengthToBase2Upper6Bit((ushort)base64Bytes.Length);
         var nearest2Length = EncodeHelper.NearestBase2((ushort)base64Bytes.Length);
         Array.Resize(ref base64Bytes, (int)nearest2Length);
 
-        Console.WriteLine($"< C: {command.Code}");
-        Console.WriteLine($"< L: {base2Length}");
-        Console.WriteLine($"< len: {nearest2Length}");
+        //Console.WriteLine($"< C: {command.Code}");
+        //Console.WriteLine($"< L: {base2Length}");
+        //Console.WriteLine($"< len: {nearest2Length}");
 
 
         bytesList.Add(base2Length);
@@ -88,7 +88,7 @@ public static class CommandHelper
         bytesList.Add(Const.ETX);
 
         var full = bytesList.ToArray();
-        Console.WriteLine($"< RAW: [{ToReadableByteArray(full)}]");
+        //Console.WriteLine($"< RAW: [{ToReadableByteArray(full)}]");
         return full;
     }
 

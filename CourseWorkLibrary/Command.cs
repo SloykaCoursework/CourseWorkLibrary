@@ -1,4 +1,6 @@
-﻿namespace CourseWorkLibrary;
+﻿using System.Collections.Generic;
+
+namespace CourseWorkLibrary;
 
 public class Command
 {
