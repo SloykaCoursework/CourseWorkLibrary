@@ -4,11 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CourseWorkLibrary.DataApi;
-
-public class TimeResult
+namespace CourseWorkLibrary.DataApi
 {
+    public class TimeResult
+    {
 
-    public TimeSpan Time { get; set; }
+        public TimeSpan Time { get; set; }
 
+    }
 }

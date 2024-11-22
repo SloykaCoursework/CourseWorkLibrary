@@ -1,11 +1,12 @@
-﻿namespace CourseWorkLibrary;
-
-public enum CommandCode : byte
+﻿namespace CourseWorkLibrary
 {
-    CreateData = 1,
-    FindArithmeticMeanValues,
-    CountAllGroups,
-    ChangeCourseToAll,
-    FindOldestStudent,
-    FindYoungerInstructor
+    public enum CommandCode : byte
+    {
+        CreateData = 1,
+        FindArithmeticMeanValues,
+        CountAllGroups,
+        ChangeCourseToAll,
+        FindOldestStudent,
+        FindYoungerInstructor
+    }
 }

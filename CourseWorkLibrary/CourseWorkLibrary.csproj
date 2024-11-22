@@ -1,9 +1,9 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
 	<PackageId>CourseworkLibrary</PackageId>
-	<Version>1.0.6</Version>
+	<Version>1.1.0</Version>
 	<Authors>Sloyka-dev</Authors>
 	<Company>SloykaCoursework</Company>
 	<PackageDescription>This is a library for my coursework application.</PackageDescription>
